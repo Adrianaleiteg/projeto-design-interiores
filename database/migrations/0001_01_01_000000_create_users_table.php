@@ -17,10 +17,8 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('document');
             $table->string('company_name');
             $table->date('birth');
-            $table->boolean('permission');
             $table->rememberToken();
             $table->timestamps();
         });

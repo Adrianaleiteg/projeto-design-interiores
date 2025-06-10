@@ -20,16 +20,20 @@ class RegisterController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:users',
             'password' => 'required|string|min:6|confirmed',
+            'company_name' => 'required|string|max:255',
+            'birth' => 'required|date',
         ]);
 
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'company_name' => $request->company_name,
+            'birth' => $request->birth,
         ]);
 
         Auth::login($user);
 
-        return redirect('/home');
+        return redirect('/');
     }
 }

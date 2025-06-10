@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('allprojects', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->usignedBigInteger('project_id');
+            $table->integer('project_id');
             $table->foreign('project_id')->references('id')->on('projetos');
-            $table->usignedBigInteger('funcionario_id');
+            $table->integer('funcionario_id');
             $table->foreign('funcionario_id')->references('id')->on('users');
             $table->string('nome_projeto');
             $table->foreign('nome_projeto')->references('name')->on('projetos');

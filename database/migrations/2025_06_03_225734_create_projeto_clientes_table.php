@@ -14,12 +14,12 @@ return new class extends Migration
         Schema::create('projeto_clientes', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->usignedBigInteger('user_id');
+            $table->integer('user_id');
             $table->foreign('user_id')->references('id')->on('users');
-            $table->usignedBigInteger('project_id');
+            $table->integer('project_id');
             $table->foreign('project_id')->references('id')->on('projetos');
             $table->string('feedback');
-            $table->reacao('reacao');
+            $table->integer('reacao');
         });
     }
 

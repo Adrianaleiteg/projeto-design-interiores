@@ -15,12 +15,12 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('name');
-            $table->usignedBigInteger('cliente_id');
-            $table->foreign('cliente_id')->references('id')->on('users');
+            $table->integer('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->string('status');
-            $table->usignedBigInteger('funcionario_id');
-            $table->foreign('funcionario_id')->references('id')->on('users');
-            $table->string('estapa_atual');
+            $table->integer('funcionario_id');
+            $table->foreign('funcionario_id')->references('id')->on('employees');
+            $table->string('etapa_atual');
             $table->string('etapa_anterior');
             $table->string('etapa_posterior');
             $table->integer('tempo_final_etapa');

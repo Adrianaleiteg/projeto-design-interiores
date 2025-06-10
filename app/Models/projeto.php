@@ -7,6 +7,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class projeto extends Model
 {
-    /** @use HasFactory<\Database\Factories\ProjetoFactory> */
     use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'user_id',
+        'funcionario_id',
+        'status',
+        'etapa_atual',
+        'etapa_anterior',
+        'etapa_posterior',
+        'tempo_final_etapa',
+    ];
+
+    protected $table = 'projetos';
 }

@@ -25,7 +25,6 @@ class User extends Authenticatable
         'birth',
         'company_name',
         'telephone',
-        'permission',
     ];
 
     /**
